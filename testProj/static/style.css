@@ -1,0 +1,191 @@
+
+:root {
+  --Donar_Brown: #372416;
+  --Fall_Donor: #E58E3D;
+  --Fall_Brown: #715437;
+  --Fall_Green: #686144;
+  --KRCL_White: #F9F6DC;
+  --Side1: #F5B44F;
+  --Side2: #080809;
+  --navTabs: #ffffff;
+
+  --light_green3: #F5FBEF;
+  --light_green2: #E4F2D6;
+  --light_green1: #CCE4B4;
+  --green: #74A541;
+  --light_gray2: #78756c;
+  --light_gray: #4C4A43;
+  --dark_gray: #212121;
+  --orange: #DC5600;
+}
+
+body {
+  background: var(--light_green3);
+  font-family: Georgia, sans-serif;
+  line-height:1.6em;
+}
+
+.navbar {
+  background: var(--light_gray);
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  border-bottom-color: var(--green);
+  
+}
+
+ .navbar-nav{
+  margin-top: 12px;
+ }
+
+.navbar-nav>li{
+  margin-left: 30px;
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+.navbar-nav > li > a {
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 3px;
+  color: var(--navTabs);
+  line-height: 24px;
+  display: inline-block;
+}
+
+.navbar-nav > li > a:hover{
+	background-color: var(--light_gray2);
+  color: var(--navTabs);
+}
+
+ .navbar-nav > .active > a,
+ .navbar-nav > .active > a:hover,
+ .navbar-nav > .active > a:focus,
+ .navbar-nav > .open > a,
+ .navbar-nav > .open > a:hover,
+ .navbar-nav > .open > a:focus {
+  background-color: var(--green);
+  color: white;
+}
+
+.donate_button {
+  background-color: var(--green);
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 3px;
+  color: var(--navTabs);
+  line-height: 24px;
+  display: inline-block;
+}
+
+.submit_button {
+  background-color: var(--green);
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 3px;
+  color: var(--navTabs);
+  line-height: 24px;
+  display: inline-block;
+}
+
+.modal-body {
+  background: var(--light_green3);
+}
+
+.modal-footer {
+  background: var(--light_green3);
+  border-top: 0px;
+}
+
+a {
+  color: var(--dark_gray);
+  -webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
+
+#footer {
+  padding-top: 30px;
+  color: white;
+  background: var(--dark_gray);
+}
+
+#footer a {
+  color: white;
+}
+
+#footer a:hover {
+  color: var(--navTabs);
+}
+
+.foot-logo {
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  border-bottom-color: var(--orange);
+}
+
+.footer-copyright {
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--dark_gray);
+  text-align: center;
+  font-size: .9rem;
+}
+
+.nav-tabs .nav-link:hover {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  background-color: var(--light_green2);
+  border-color: var(--light_green1);
+  color: var(--dark_gray);
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: var(--navTabs);
+  background-color: var(--green);
+  border-color: var(--dark_gray);
+}
+
+/* Recording buttons styles */
+
+#record {
+  background-color: var(--green);
+  border-color: var(--green);
+  color: black;
+  }
+  
+  #record:focus {
+      box-shadow: 0 0 0 0.2rem rgba(8, 8, 9,.5);
+  }
+  
+  #stop {
+  background-color: var(--light_green1);
+  border-color: var(--light_green1);
+  color: black;
+  
+  }
+  
+  #stop:focus {
+      box-shadow: 0 0 0 0.2rem rgba(113, 84, 54,.5);
+  }
+  #resume {
+  background-color: var(--light_green1);
+  border-color: var(--light_green1);
+  color: black;
+  
+  }
+  
+  #resume:focus {
+      box-shadow: 0 0 0 0.2rem rgba(55, 36, 22,.5);
+  }
+  
+  #pause {
+  background-color: var(--light_green1);
+  border-color: var(--light_green1);
+  color: black;
+  }
+  
+  #pause:focus {
+      box-shadow: 0 0 0 0.2rem rgba(104, 97, 68,.5);
+  }

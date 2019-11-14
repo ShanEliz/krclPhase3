@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+</br>
+</br>
+</br>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-7 text-center">
+            <h1>Thank you for sharing!</h1></br>
+            <pre class="mb-6" style="font-size: 18px;">Thank you for sending us your voice note </br>to us to be shared on live radio.
+            </br>Would you like to send another?</pre>
+            <div class="submit_button">
+                <a class="btn" role="button" href="{% url 'voicenote' %}"><font color="white">Yes</font></a>
+            </div>
+            <div class="submit_button">
+                <a class="btn" role="button" href="{% url 'home' %}"><font color="white">No</font></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</br>
+</br>
+</br>
+{% endblock content %}

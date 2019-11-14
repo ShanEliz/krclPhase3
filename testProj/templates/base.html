@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KRCL {% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href={% static "favicon-32x32.png" %}>
+    <link rel="icon" type="image/png" sizes="16x16" href={% static "favicon-16x16.png" %}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> jquery.js?rand=23423423 </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href={% static "style.css" %} rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    {% block timeline %}
+
+    {% endblock timeline %}
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src={% static "logo_back.png" %} style="width: 100px;" alt="logo">
+                </a>
+                <ul class="navbar-nav ml-sm-auto">
+                    <li {% if "/" == request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li {% if 'submit_story' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'submit_story' %}">Share Your Story</a></li>
+                    <li {% if 'playlists' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'playlists' %}">Playlists</a></li>
+                    <li {% if 'episodes' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'episodes' %}">Episodes</a></li>
+                    <li {% if 'voicenote' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'voicenote' %}">Send Voice Note</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+    <!-- Content -->
+    {% block content %}
+    
+    {% endblock content %}
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-2 mx-auto">
+                    <ul class="list-unstyled">
+                    <div class="foot-logo"><li><a href="https://krcl.org" target="_blank"><img src={% static "footer/krcl_footer.png" %} alt="krcl footer logo"></a></li></div>
+                    <li class="pt-5"></li>
+                    </ul>
+                </div>
+                <div class="col-4 mx-auto">
+                    <ul class="list-unstyled"> 
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'submit_story' %}">Share Your Story</a></li>
+                        <li><a href="{% url 'playlists' %}">Playlists</a></li>
+                        <li><a href="{% url 'episodes' %}">Episodes</a></li>
+                        <li><a href="{% url 'voicenote' %}">Send Voice Note</a></li>
+                    </ul>
+                </div>
+                <div class="col-2 mx-auto">
+                    <ul class="list-unstyled">
+                         <li><a href="https://apps.apple.com/us/app/krcl-public-radio-app/id518820032" target="_blank"><img class="mx-auto d-flex" src={% static "footer/apple.svg" %} alt="App store download krcl app" style="width: 130px;"></a></li>
+                         <li><a href="https://play.google.com/store/apps/details?id=com.skyblue.pra.krcl&hl=en_US" target="_blank"><img class="mx-auto d-flex" src={% static "footer/google.png" %} alt="Google play download krcl app" style="width: 150px;"></a></li>
+                         <div class="donate_button"><li><a href="https://krcl.secureallegiance.com/krcl/WebModule/Donate.aspx?P=2018FALLPR&PAGETYPE=PLG&CHECK=Q%2bkxhH3Nxza6h5Xt8yfCBr1YhDw50SikSh2nq0qouhg%3d" role="button" target="_blank">Donate</a></li></div>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <ul class="list-inline pb-4">
+                <li class="list-inline-item"></li><a href="https://www.instagram.com/krclradio/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li>
+                <li class="list-inline-item"></li><a href="https://www.facebook.com/KRCLradio" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></li>
+                <li class="list-inline-item"></li><a href="https://twitter.com/KRCLradio" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li class="list-inline-item"></li><a href="https://krcl.org/rss/news/" target="_blank"><i class="fas fa-rss fa-2x"></i></a></li>
+
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                &copy; KRCL 2019 Listener's Community Radio of Utah dba KRCL 90.9 fm is a 501(c)(3) nonprofit registered in the US under EIN #87-0322222
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock title %}
+
+{% load static %}
+
+{% block timeline %}
+<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
+<style>
+
+</style>
+
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+{% endblock timeline %}
+
+{% block content %}
+<div id='timeline-embed' style="width: 100%; height: 600px"></div>
+<!-- 3 -->
+<script type="text/javascript">
+  timeline = new TL.Timeline('timeline-embed', '{% static "dataTL.json" %}');
+</script>
+{% endblock content %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Submit VoiceNote{% endblock title %}
+{% load static %}
+
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+
+<div class="container">
+    <h3>Send us your voice note</h3>
+
+    <!--
+    <p class="mt-4" id="aboveSubmit">
+      Join the conversation and send us your input to have it heard on the show!
+    </br>Record your note then click submit and we will instantly receive your voice note so that your voice is heard.</p>
+    -->
+
+    <div class="container">
+        <!-- Button to Open the Modal -->
+        <div class="submit_button">
+            <button type="button" class="btn" data-toggle="modal" data-target="#myModal"><font color="white">
+              What is a voice note?</font></button>
+          </div>
+      
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            
+              
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                Join the conversation and send us your input to have it heard on the show!
+              </br>Record your note then click submit and we will instantly receive your voice note so that your voice is 				heard.
+              </div>
+              
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <div class="submit_button">
+                    <button type="button" class="btn" data-dismiss="modal"><font color="white">Done</font></button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    
+    <p class="mb-4">Please keep it under 3 minutes.</p>
+    <canvas class="visualizer" height="120px" style="display: none; border-radius: 50px; margin-bottom: 20px;"></canvas>
+
+    <button class="btn mr-2" id="record">Record</button>
+
+    <button class="btn mr-2" disabled id="stop">Stop</button>
+
+    <button class="btn mr-2" disabled id="resume">Resume</button>
+
+    <button class="btn mr-2" disabled id="pause">Pause</button>
+    </br></br>
+
+    <section class="mt-n3" id="recordings">
+
+    </section>
+    </br>
+    <form method='POST' id="post-form" enctype="multipart/form-data">
+        <div class="form-group mb-3">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control col-7" required id="name" placeholder="Enter your name"
+                name="name">
+        </div>
+        <div class="form-group">
+            <p></p>
+            <label for="email">Email:</label>
+            <input type="email" class="form-control col-7" required id="email" placeholder="Enter your email"
+                name="email">
+            <p>(Testing purposes) Enter your email to check if the voicenote gets sent to your inbox.</p>
+        </div>
+        </br>
+        <div class="submit_button">
+          <button type='submit' value='Save' class="btn"><font color="white">Submit</font></button>
+        </div>
+    </form>
+      <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Whoopsies..</h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+              Please record a voicenote before clicking submit.
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+</div>
+<script src="https://unpkg.com/mp3-mediarecorder@latest"></script>
+<script src={% static "voicenote.js" %}></script>
+</br>
+</br>
+</br>
+{% endblock content %}
