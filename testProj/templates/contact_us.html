@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock title %}
+
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+<div class="container">
+  <h2>Contact Us</h2>
+  </br>
+    <ul style="list-style-type:none;">
+        <li>90.9fm KRCL</li>
+        </br>
+        <li><a href="https://www.google.com/maps/place/90.9fm+KRCL+Listeners+Community+Radio+of+Utah/@40.7703385,-111.9497801,17z/data=!4m13!1m7!3m6!1s0x8752f479efdc1303:0xcaf11eed5352a0e3!2s1971+W+North+Temple,+Salt+Lake+City,+UT+84116!3b1!8m2!3d40.7702435!4d-111.9476743!3m4!1s0x8752f479e557b67d:0x9e117cd5f64f9c6!8m2!3d40.7702776!4d-111.9470228">1971 West North Temple</br>Salt Lake City, UT 84116</a></li>
+        </br>
+        <li>Main Office: (801) 363-1818</li>
+        <li>Studio Line: (801) 359-9191 or (800) 359-9191</li>
+        <li>Email Us: <a href="comments@krcl.org">comments@krcl.org</a></li>
+        <li><a href="https://krcl.org/events/" target="_blank">Community Calendar information</a></li>
+        </br>
+        <li><a href="https://krcl.org/blog/directions-to-the-krcl-studios/">Directions to KRCL</a></li>
+        <li><a href="https://www.google.com/maps/place/1971+W+North+Temple,+Salt+Lake+City,+UT+84116/@40.7702015,-111.9473811,3a,75y,103.57h,78.08t/data=!3m9!1e1!3m7!1siB8tJG8vEC2-vCOmYLpkUg!2e0!7i13312!8i6656!9m2!1b1!2i40!4m5!3m4!1s0x8752f479efdc1303:0xcaf11eed5352a0e3!8m2!3d40.7702435!4d-111.9476743">Google Map Streetview</a></li>
+    </ul>
+    
+</br>
+</br>
+
+  <form method='POST'> {% csrf_token %}
+      {{ form.errors }}
+      {{ form.non_field_errors }}
+      <div class="form-group">
+          <h4>Email KRCL</h4>
+          <label for="title">Subject:</label>
+          <input type="text" class="form-control col-6" required id="title" placeholder="Enter a Subject" name="title">
+        </div>
+        <div class="form-group">
+              <label for="story">Message:</label>
+              <textarea type="text" rows="4" class="form-control col-6" required id="story" placeholder="Enter your Message" name="story"></textarea>
+      </div>
+      
+       <button type='submit' value='Save' class="btn btnGreen">Send</button>
+  </form>
+</div>
+
+<style>
+        /* unvisited link */
+        a:link {
+          color: #74A541;
+          text-decoration: underline;
+        }
+        
+        /* visited link */
+        a:visited {
+          color: #74A541;
+          text-decoration: underline;
+        }
+        
+        /* mouse over link */
+        a:hover {
+          color: #DC5600;
+          text-decoration: none;
+        }
+        
+        /* selected link */
+        a:active {
+          color: #FAA634;
+        }
+</style>
+
+<script>
+    $(document).ready(function(){
+        $("#capCheck").click(function (){
+            if ($("#capCheck").prop("checked")){
+                $("#cap").show();
+            }else{
+                $("#cap").hide();
+            }              
+        });
+        $("#credCheck").click(function (){
+            if ($("#credCheck").prop("checked")){
+                $("#cred").show();
+            }else{
+                $("#cred").hide();
+            }              
+        });
+        $("#endCheck").click(function (){
+            if ($("#endCheck").prop("checked")){
+                $("#end").show();
+            }else{
+                $("#end").hide();
+            }              
+        });
+    });
+</script>
+
+</br>
+</br>
+</br>
+{% endblock content %}

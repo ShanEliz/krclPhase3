@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<script>
+    $(document).ready(function () {
+        $("#backb").click(function () {
+            $("body").css("background", $('#back').val());
+            $(".navbar").css("background", $('#backNav').val());
+            $("a.nav-link").css("color", $('#links').val());
+            $("a.nav-link").hover(function () {
+                $(this).css("color", $('#linksHover').val());
+                $(this).css("background-color", $('#linksHoverBack').val());
+            });
+        });
+    });
+</script>
+</br>
+</br>
+</br>
+<div class="container">
+        <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#demo">Click me</button>
+        <div id="demo" class="collapse">
+    <pre style="color: black; font-family: Verdana; font-size: 14px;">
+
+        - Use # sign before hex colors. Example, #F5B44F.
+        - Click Try to test the colors (You can try more than one).
+        - To revert a color, remove it from the form and click Try again.
+    </pre>
+        </div>
+    <div class="form-group mt-5">
+        <label>Background color for whole page:</label>
+        <input class="form-control mb-4 col-4" type="text" id="back">
+        <label>Background color for navbar:</label>
+        <input class="form-control mb-4 col-4" type="text" id="backNav">
+
+        <label>Font color for links in navbar:</label>
+        <input class="form-control mb-4 col-4" type="text" id="links">
+
+        <label>Font color for links in navbar when hovered over:</label>
+        <input class="form-control mb-4 col-4" type="text" id="linksHover">
+
+        <label>Background color for links in navbar when hovered over:</label>
+        <input class="form-control mb-4 col-4" type="text" id="linksHoverBack">
+
+        <button class="btn btn-warning" id="backb">Try</button>
+    </div>
+
+</div>
+{% endblock content %}

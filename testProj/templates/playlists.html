@@ -2,93 +2,81 @@
 {% block title %}Playlists{% endblock title %}
 
 {% block content %}
-</br>
-</br>
-</br>
-</br>
 
+<style>
+
+ /* --redish: #F05133;
+  --maroon: #9b1046; */
+  #p {
+    border: 0px none;
+    margin-top: -134px;
+    margin-bottom: -21vh;
+  }
+  .container {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  @media only screen and (max-width: 352px) {
+    #p {
+      /* margin-top: -132px; */
+      width: 100vw;
+      height: 100vh;
+
+    }
+  }
+
+  @media only screen and (min-width: 352px) {
+    #p {
+      /* margin-top: -132px; */
+      width: 100vw;
+      height: 100vh;
+    }
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  @media only screen and (min-width: 764px) {
+    #p {
+      margin-top: -153px;
+      width: 765px;
+      min-height: 3290px;
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: -24vh;
+    }
+    .container {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    #p {
+      margin-top: -153px;
+      width: 765px;
+      min-height: 3290px;
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: -24vh;
+    }
+  }
+</style>
 <div class="container">
-        <h2>Listen to our Playlists</h2>
-        <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                        <ul class="nav nav-tabs flex-column" role="tablist">
-          
-                                <li class="nav-item">
-                                  <a class="nav-link active" data-toggle="tab" href="#Pop">Pop</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Rock">Rock</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Indie">Indie</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Classical">Classical</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Jazz">Jazz</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Soul">Soul</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                  <a class="nav-link" data-toggle="tab" href="#Blues">Blues</a>
-                                </li>
-                                
-                              </ul>
-                </div>
-
-                <div class="col-5 mx-auto mt-n5">
-                        <div class="tab-content">
-           
-                                <div id="Pop" class="container tab-pane active"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX92MLsP3K1fI" width="300" height="380" frameborder="no" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Rock" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWXRqgorJj26U" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Indie" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2Nc3B70tvx0" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Classical" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWEJlAGA9gs0" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Jazz" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXbITWG1ZJKYt" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Soul" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX62Nfha2yFhL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                                <div id="Blues" class="container tab-pane fade"><br>
-                                  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXd9rSDyQguIk" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                          
-                                </div>
-                                
-                          
-                              </div>
-
-                </div>
-                   
-            </div>
-
-        </div>
-        
-      
-
+  <div class="row no-gutters">
+    <div class="mt-3">
+      <div style="overflow: hidden;">
+        <iframe id="p"  src="https://krcl.org/playlist/"></iframe>
       </div>
+    </div>
+  </div>
+
+</div>
 
 </br>
 </br>
