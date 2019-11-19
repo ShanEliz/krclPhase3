@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>KRCL {% block title %}{% endblock title %}</title>
-    <link rel="icon" type="image/png" sizes="32x32" href={% static "favicon-32x32.png" %}>
-    <link rel="icon" type="image/png" sizes="16x16" href={% static "favicon-16x16.png" %}>
+    <link rel="icon" type="image/png" sizes="32x32" href={% static "greenGlobe.png" %}>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> jquery.js?rand=23423423 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -21,20 +20,43 @@
 
 </head>
 <body>
+        <div class="d-flex justify-content-around align-items-center" id="topbar">  
+            <div class="p-2">
+                <span class="align-text-bottom">Listen live  </span>
+                <a href="https://krcl.org/listen-live" onclick="javascript:void window.open('https://krcl.org/listen-live','1436221340090','width=600,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=0,resizable=1,left=0,top=0');return false;"><i class="fas fa-broadcast-tower fa-2x"></i></a>
+            </div>
+            <div class="p-1">
+                <span class="align-text-bottom"> KRCL Social: </span>
+                <a href="https://www.instagram.com/krclradio/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.facebook.com/KRCLradio" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://twitter.com/KRCLradio" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://krcl.org/rss/news/" target="_blank"><i class="fas fa-rss fa-2x"></i></a>
+            
+                <a href="https://krcl.secureallegiance.com/krcl/WebModule/Donate.aspx?P=2018FALLPR&PAGETYPE=PLG&CHECK=Q%2bkxhH3Nxza6h5Xt8yfCBr1YhDw50SikSh2nq0qouhg%3d" class="btn btn-sm btnGreen" id="donate" role="button" target="_blank">Donate</a>
+            
+            </div>
+                
+        </div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm">
+    <nav class="navbar navbar-expand-md sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src={% static "logo_back.png" %} style="width: 100px;" alt="logo">
+                    <img src={% static "logoKRCL.png" %} alt="logo">
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon">   
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </span>                
+                    </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-sm-auto">
                     <li {% if "/" == request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li {% if 'submit_story' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'submit_story' %}">Share Your Story</a></li>
                     <li {% if 'playlists' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'playlists' %}">Playlists</a></li>
                     <li {% if 'episodes' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'episodes' %}">Episodes</a></li>
                     <li {% if 'voicenote' in request.path %}class="active"{% endif %}><a class="nav-link" href="{% url 'voicenote' %}">Send Voice Note</a></li>
-                    
                 </ul>
+                </div>
             </div>
         </nav>
 
@@ -46,27 +68,24 @@
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-2 mx-auto">
-                    <ul class="list-unstyled">
-                    <div class="foot-logo"><li><a href="https://krcl.org" target="_blank"><img src={% static "footer/krcl_footer.png" %} alt="krcl footer logo"></a></li></div>
+            <div class="row d-none d-md-flex">
+                <div class="col-4">
+                    <ul class="list-unstyled mx-auto">
+                        <div class="foot-logo"><li><a href="https://krcl.org" target="_blank"><img src={% static "footer/krcl_footer.png" %} alt="krcl footer logo"></a></li></div>
                     <li class="pt-5"></li>
                     </ul>
                 </div>
-                <div class="col-4 mx-auto">
-                    <ul class="list-unstyled"> 
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'submit_story' %}">Share Your Story</a></li>
-                        <li><a href="{% url 'playlists' %}">Playlists</a></li>
-                        <li><a href="{% url 'episodes' %}">Episodes</a></li>
-                        <li><a href="{% url 'voicenote' %}">Send Voice Note</a></li>
+                <div class="col-4 mt-3">
+                    <ul class="list-unstyled mx-auto"> 
+                        <li><a href="https://krcl.org">KRCL.org</a></li>
+                        <li {% if 'contact_us' in request.path %}class="active"{% endif %}><a href="{% url 'submit_story' %}">Contact Us</a></li>
+                        <li><a href="https://krcl.secureallegiance.com/krcl/WebModule/Donate.aspx?P=2018FALLPR&PAGETYPE=PLG&CHECK=Q%2bkxhH3Nxza6h5Xt8yfCBr1YhDw50SikSh2nq0qouhg%3d">Support Local Community</a></li>
                     </ul>
                 </div>
-                <div class="col-2 mx-auto">
-                    <ul class="list-unstyled">
+                <div class="col-4">
+                    <ul class="list-unstyled mx-auto">
                          <li><a href="https://apps.apple.com/us/app/krcl-public-radio-app/id518820032" target="_blank"><img class="mx-auto d-flex" src={% static "footer/apple.svg" %} alt="App store download krcl app" style="width: 130px;"></a></li>
                          <li><a href="https://play.google.com/store/apps/details?id=com.skyblue.pra.krcl&hl=en_US" target="_blank"><img class="mx-auto d-flex" src={% static "footer/google.png" %} alt="Google play download krcl app" style="width: 150px;"></a></li>
-                         <div class="donate_button"><li><a href="https://krcl.secureallegiance.com/krcl/WebModule/Donate.aspx?P=2018FALLPR&PAGETYPE=PLG&CHECK=Q%2bkxhH3Nxza6h5Xt8yfCBr1YhDw50SikSh2nq0qouhg%3d" role="button" target="_blank">Donate</a></li></div>
                     </ul>
                  </div>
             </div>
@@ -77,7 +96,6 @@
                 <li class="list-inline-item"></li><a href="https://www.facebook.com/KRCLradio" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></li>
                 <li class="list-inline-item"></li><a href="https://twitter.com/KRCLradio" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></li>
                 <li class="list-inline-item"></li><a href="https://krcl.org/rss/news/" target="_blank"><i class="fas fa-rss fa-2x"></i></a></li>
-
             </ul>
         </div>
         <div class="footer-copyright">

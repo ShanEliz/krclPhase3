@@ -41,7 +41,7 @@ if (isBrowserSupported) {
                 recorder.onstart = e => {
                     console.log('onstart', e);
                     blobs = [];
-                    visualize(stream);
+                    visualize(mediaStream);
                     canvas.style.display = 'block';
                     startButton.disabled = true;
                     stopButton.disabled = false;
@@ -133,7 +133,7 @@ if (isBrowserSupported) {
 }
 
 $(document).on('submit', '#post-form', function (e) {
-    e.preventDefault()
+    // e.preventDefault()
     console.log("yo")
     var fd = document.querySelector("form");
     form = new FormData(fd)
@@ -145,21 +145,21 @@ $(document).on('submit', '#post-form', function (e) {
     var text = document.createTextNode(" Sending..");
     btn.appendChild(spn);
     btn.appendChild(text);
-    $.ajax({
-        url: "/voicenote/success",
-        type: 'POST',
-        data: form,
-        processData: false,
-        contentType: false,
-        error: function () {
-            $("#myModal").modal();
-            btn.innerHTML = "Submit";
-        }
-    }).done(function (data) {
-        if (data.success) {
-            window.location.href = data.url;
-        }
-    });
+    // $.ajax({
+    //     url: "/voicenote/success",
+    //     type: 'POST',
+    //     data: form,
+    //     processData: false,
+    //     contentType: false,
+    //     error: function () {
+    //         $("#myModal").modal();
+    //         btn.innerHTML = "Submit";
+    //     }
+    // }).done(function (data) {
+    //     if (data.success) {
+    //         window.location.href = data.url;
+    //     }
+    // });
     // var xhr = new XMLHttpRequest();
     // xhr.open('POST', 'http://127.0.0.1:8000/voicenote/', true);
     // xhr.send(form);
@@ -186,11 +186,11 @@ function visualize(stream) {
 
         analyser.getByteTimeDomainData(dataArray);
 
-        canvasCtx.fillStyle = '#372416';
+        canvasCtx.fillStyle = '#74A541';
         canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
         canvasCtx.lineWidth = 2;
-        canvasCtx.strokeStyle = '#e58e3d';
+        canvasCtx.strokeStyle = '#F5FBEF';
 
         canvasCtx.beginPath();
 
